@@ -16,8 +16,8 @@ TriangleHeap& TriangleHeap::operator=(const TriangleHeap& other)
 {
 	if (this != &other)
 	{
-		this->mBase = other.mBase;
-		this->mHeight = other.mHeight;
+		mBase = other.mBase;
+		mHeight = other.mHeight;
 
 
 	}
@@ -27,7 +27,8 @@ TriangleHeap& TriangleHeap::operator=(const TriangleHeap& other)
 
 TriangleHeap::TriangleHeap(const TriangleHeap& other)
 {
-	*this = other;
+	this->mBase = other.mBase;
+	this->mHeight = other.mHeight;
 }
 
 
@@ -38,7 +39,7 @@ TriangleHeap::~TriangleHeap()
 
 void TriangleHeap::SetBase(float _mBase)
 {
-	mBase = &_mBase;
+	*mBase = *(&_mBase);
 }
 
 void TriangleHeap::SetHeight(float _mHeight)
@@ -56,5 +57,5 @@ void TriangleHeap::Print(TriangleHeap triangle)
 {
 	float* height = triangle.mHeight;
 	float* base = triangle.mBase;
-	std::cout << "Height: " << height << "\nBase: " << base << "\nArea: " << triangle.GetArea(*height, *base) << std::endl;
+	std::cout << "Height: " << *height << "\nBase: " << *base << "\nArea: " << triangle.GetArea(*height, *base) << std::endl;
 }

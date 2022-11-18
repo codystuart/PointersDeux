@@ -52,13 +52,17 @@ int main()
     }
 
     std::cout << "[Creating TriangleHeap Objects]" << std::endl;
-    TriangleHeap th1;
-    th1.SetBase(10);
-    th1.SetHeight(12);
+    float base = 10;
+    float height = 12;
+    
+    float* baseptr = nullptr;
+    float* heightptr = nullptr;
 
-    TriangleHeap th2;
-    th2.SetBase(15);
-    th2.SetHeight(3);
+    baseptr = &base;
+    heightptr = &height;
+
+    TriangleHeap th1(baseptr, heightptr);
+    TriangleHeap th2 = th1;
 
     std::vector<TriangleHeap> th;
     th.push_back(th1);

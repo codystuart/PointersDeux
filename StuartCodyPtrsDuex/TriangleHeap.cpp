@@ -39,7 +39,7 @@ TriangleHeap::~TriangleHeap()
 
 void TriangleHeap::SetBase(float _mBase)
 {
-	mBase = &_mBase);
+	mBase = &_mBase;
 }
 
 void TriangleHeap::SetHeight(float _mHeight)

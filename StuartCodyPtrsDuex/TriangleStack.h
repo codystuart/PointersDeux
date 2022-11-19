@@ -6,7 +6,6 @@ private:
 	float mHeight;
 public: 
 	TriangleStack();
-	//TriangleStack(float mBase, float mHeight);
 	~TriangleStack();
 
 	void SetBase(float _mBase);

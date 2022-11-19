@@ -16,7 +16,8 @@ TriangleHeap& TriangleHeap::operator=(const TriangleHeap& other)
 {
 	if (this != &other)
 	{
-
+		delete mBase;
+		delete mHeight;
 		mBase = new float(*other.mBase);
 		mHeight = new float(*other.mHeight);
 	}
@@ -38,11 +39,14 @@ TriangleHeap::~TriangleHeap()
 
 void TriangleHeap::SetBase(float _mBase)
 { 
+	delete mBase;
+	
 	mBase = new float(_mBase);
 }
 
 void TriangleHeap::SetHeight(float _mHeight)
 {
+	delete mHeight;
 	mHeight = new float(_mHeight);
 }
 
